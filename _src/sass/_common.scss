@@ -94,7 +94,6 @@ body {
 	}
 	@include desktop {
 		font-size: $base-font-size;
-		line-height: $base-line-height;
 		min-width: $contentBaseWidgth_PC;
 	}
 	@include smartphone {
@@ -118,15 +117,61 @@ a:active { // クリックしてから離されるまでの状態
  * ------------------- */
 header {
 	background-color: #fff;
+	@include desktop {
+		border-bottom: 1px solid #f8f8f8;
+	}
 	.header_contentes {
 		@extend %ext_base_block;
+		display: flex;
 		@include desktop {
 			margin: 0 auto;
-			padding: 20px 0;
+			padding: 1px 0 0;
 		}
 		@include smartphone {
 			padding: percentage(30 / 640) 0;
 			background-color: #fff;
+		}
+		.header_logo {
+			a {
+				display: block;
+			}
+			@include desktop {
+				margin: 0 11px 5px 15px;
+			}
+		}
+		nav {
+			ul {
+				display: flex;
+				justify-content: space-between;
+				li {
+					a {
+						display: inline-block;
+						padding: 23px 7px 26px;
+					}
+					a:link,
+					a:visited,
+					a:hover,
+					a:active {
+						color: #666674;
+						text-decoration: none;
+					}
+					a:hover {
+						box-sizing: border-box;
+						border-bottom: 2px solid #000;
+					}
+				}
+			}
+		}
+		.nav_icon {
+			display: flex;
+			align-items: center;
+			margin-left: 201px;
+			li {
+				a {
+					display: block;
+				}
+				margin: 0 10px;
+			}
 		}
 	}
 }
