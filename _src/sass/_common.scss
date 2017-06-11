@@ -180,16 +180,49 @@ header {
 /** ---------------------
  * コンテンツエリアCSS
  * ------------------- */
-.main_area {
-	.main_contents {
+.mv_area {
+	@include desktop {
+		background: url(#{$imgPath}mv_bg.png) no-repeat 50% 50%;
+		background-size: cover;
+	}
+	.mv_contents {
 		@extend %ext_base_block;
 		@include desktop {
-			height: 1300px; // 仮
+			@include clearfix;
 			margin: 0 auto;
+			padding-top: 373px;
 		}
 		@include smartphone {
 			height: 2000px;
 			padding-top: 20px;
+		}
+		h1 {
+			@include desktop {
+				float: left;
+				margin: 6px 33px 0 4px;
+			}
+		}
+		.mv_copy {
+			@include desktop {
+				float: left;
+				margin-bottom: 7px;
+				@include backgroundFig(506px, 33px, "mv_copy.png");
+			}
+		}
+		.mv_date {
+			@include desktop {
+				float: left;
+				margin: 0 0 5px 1px;
+				@include backgroundFig(505px, 103px, "mv_date.png");
+			}
+		}
+		.mv_credit {
+			color: #fff;
+			font-size: 14px;
+			@include desktop {
+				float: right;
+				margin-bottom: 7px;
+			}
 		}
 	}
 }
