@@ -109,6 +109,7 @@ a:visited,
 a:hover,
 a:active { // クリックしてから離されるまでの状態
 	color: $linkColor;
+	text-decoration: none;
 }
 
 
@@ -136,7 +137,7 @@ header {
 				display: block;
 			}
 			@include desktop {
-				margin: 0 11px 5px 15px;
+				margin: 0 11px 3px 15px;
 			}
 		}
 		nav {
@@ -144,10 +145,6 @@ header {
 				display: flex;
 				justify-content: space-between;
 				li {
-					a {
-						display: inline-block;
-						padding: 23px 7px 26px;
-					}
 					a:link,
 					a:visited,
 					a:hover,
@@ -155,22 +152,33 @@ header {
 						color: #666674;
 						text-decoration: none;
 					}
-					a:hover {
-						box-sizing: border-box;
-						border-bottom: 2px solid #000;
+					a {
+						@include desktop {
+							display: inline-block;
+							padding: 23px 7px 26px;
+							font-size: 12px;
+							&:hover {
+								box-sizing: border-box;
+								border-bottom: 2px solid #000;
+							}
+						}
 					}
 				}
 			}
 		}
 		.nav_icon {
-			display: flex;
-			align-items: center;
-			margin-left: 201px;
+			@include desktop {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: 120px;
+				margin-left: auto;
+				margin-right: 16px;
+			}
 			li {
 				a {
 					display: block;
 				}
-				margin: 0 10px;
 			}
 		}
 	}
@@ -178,10 +186,11 @@ header {
 
 
 /** ---------------------
- * コンテンツエリアCSS
+ * メインビジュアルエリアCSS
  * ------------------- */
 .mv_area {
 	@include desktop {
+		margin-bottom: 50px;
 		background: url(#{$imgPath}mv_bg.png) no-repeat 50% 50%;
 		background-size: cover;
 	}
@@ -205,24 +214,71 @@ header {
 		.mv_copy {
 			@include desktop {
 				float: left;
-				margin-bottom: 7px;
+				margin-bottom: 8px;
 				@include backgroundFig(506px, 33px, "mv_copy.png");
 			}
 		}
 		.mv_date {
 			@include desktop {
 				float: left;
-				margin: 0 0 5px 1px;
+				margin: 0 0 4px 1px;
 				@include backgroundFig(505px, 103px, "mv_date.png");
 			}
 		}
 		.mv_credit {
-			color: #fff;
 			font-size: 14px;
 			@include desktop {
 				float: right;
-				margin-bottom: 7px;
+				margin-bottom: 6px;
 			}
+		}
+	}
+}
+
+
+/** ---------------------
+ * アバウトエリアCSS
+ * ------------------- */
+.about_area {
+	@extend %ext_base_block;
+	h2, p {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.about_copy {
+		@include desktop {
+			margin-bottom: 29px;
+			@include backgroundFig(554px, 42px, "about_copy.png");
+		}
+	}
+	.about_ttl {
+		@include desktop {
+			margin-bottom: 30px;
+			@include backgroundFig(783px, 56px, "about_ttl.png");
+		}
+	}
+	.about_date {
+		@include desktop {
+			margin-bottom: 33px;
+			@include backgroundFig(449px, 22px, "about_date.png");
+		}
+	}
+	.about_desc {
+		@include desktop {
+			margin-bottom: 34px;
+			font-size: 18px;
+			line-height: 1.77em;
+		}
+	}
+	.about_present {
+		@include desktop {
+			display: flex;
+			justify-content: space-between;
+			width: 706px;
+			margin: 0 auto;
+		}
+		.present_best {
+			margin-right: 89px;
 		}
 	}
 }
