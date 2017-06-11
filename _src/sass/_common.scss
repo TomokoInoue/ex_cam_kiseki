@@ -275,10 +275,80 @@ header {
 			display: flex;
 			justify-content: space-between;
 			width: 706px;
-			margin: 0 auto;
+			margin: 0 auto 92px;
 		}
 		.present_best {
-			margin-right: 89px;
+			@include desktop {
+				margin-right: 89px;
+			}
+		}
+	}
+}
+
+
+/** ---------------------
+ * ステップエリアCSS
+ * ------------------- */
+.steps_area {
+	@extend %ext_base_block;
+	h2, p, h3 {
+		margin: 0 auto;
+		font-size: 20px;
+		text-align: center;
+	}
+	.steps_ttl {
+		@include desktop {
+			margin-bottom: 34px;
+			@include backgroundFig(278px, 66px, "steps_ttl.png");
+		}
+	}
+	// 共通CSS
+	.steps_desc {
+		@include desktop {
+			margin-bottom: 31px;
+		}
+	}
+	// STEP1のCSS
+	.step1 {
+		@include desktop {
+			padding-bottom: 49px;
+		}
+		.step1_sub_ttl {
+			@include desktop {
+				margin-bottom: 14px;
+				@include backgroundFig(161px, 28px, "step1_sub_ttl.png");
+			}
+		}
+		.steps_follow_btn > a {
+			display: block;
+			margin: 0 auto;
+			color: #fff;
+			@include desktop {
+				width: 410px;
+				padding: 24px 0 16px 10px;
+				background: url(#{$imgPath}steps_follow_btn_icon.png) no-repeat 121px 50% #00aced;
+				background-size: 32px 26px;
+				font-size: 18px;
+			}
+		}
+		.steps_follow_btn > a:hover {
+			color: #00aced;
+			@include desktop {
+				width: 400px;
+				padding: 24px 0 16px 10px;
+				background: url(#{$imgPath}steps_follow_btn_icon_ov.png) no-repeat 121px 50% #fff;
+				background-size: 32px 26px;
+				font-size: 18px;
+			}
+		}
+	}
+	// STEP2のCSS
+	.step2 {
+		.step2_sub_ttl {
+			@include desktop {
+				margin-bottom: 16px;
+				@include backgroundFig(161px, 28px, "step2_sub_ttl.png");
+			}
 		}
 	}
 }
