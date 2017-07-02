@@ -292,7 +292,7 @@ header {
 .steps_area {
 	@extend %ext_base_block;
 	@include desktop {
-		margin-bottom: 80px;
+		margin-bottom: 81px;
 	}
 	h2, p, h3 {
 		margin: 0 auto;
@@ -436,6 +436,52 @@ header {
 				font-size: 11px;
 				text-align: right;
 			}
+		}
+	}
+}
+
+
+/** ---------------------
+ * 応募要項CSS
+ * ------------------- */
+.guideline_area {
+	@extend %ext_base_block;
+	@include desktop {
+		margin-bottom: 70px;
+	}
+	.guideline_ttl {
+		margin: 0 auto;
+		@include desktop {
+			margin-bottom: 31px;
+			@include backgroundFig(278px, 66px, "guideline_ttl.png");
+		}
+	}
+	.guideline_contents {
+		@include desktop {
+			height: 652px;
+			padding: 30px 0;
+			border: 1px solid #828491;
+		}
+		.guideline_inner {
+			@include desktop {
+				width: 942px;
+				height: 652px;
+				margin: 0 auto;
+				line-height: 1.72em;
+				overflow: auto;
+			}
+		}
+		.date_desc,
+		.howto_list,
+		.present_desc {
+			@include desktop {
+				margin-bottom: 24px;
+			}
+		}
+		.howto_list > li,
+		.caution_list > li {
+			padding-left: 1em;
+			text-indent: -1em;
 		}
 	}
 }
