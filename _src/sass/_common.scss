@@ -488,30 +488,69 @@ header {
 
 
 /** ---------------------
+ * バナーCSS
+ * ------------------- */
+.detail_btn {
+	a {
+		margin: 0 auto 60px;
+		@include desktop {
+			@include backgroundFig(620px, 66px, "detail_btn.png");
+			background-position: 0 0;
+			&:hover {
+				background-position: 0 -66px;
+			}
+		}
+	}
+}
+
+
+/** ---------------------
+ * フッターシェアCSS
+ * ------------------- */
+.footer_sns {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	@include desktop {
+		width: 200px;
+		margin-bottom: 70px;
+	}
+	li {
+	    @include desktop {
+			position: relative;
+			width: 80px;
+			height: 80px;
+	        overflow: hidden;
+	    }
+	    img:hover {
+	        @include desktop {
+	            display: block;
+	            position: absolute;
+	            top: -80px;
+	            left: 0;
+	        }
+	    }
+	}
+}
+
+
+/** ---------------------
  * フッターCSS
  * ------------------- */
 footer {
 	background-color: #fff;
 	.footer_contens {
 		@extend %ext_base_block;
+		color: #000;
+		text-align: center;
 		@include desktop {
 			margin: 0 auto;
-			padding: 20px 0;
+			padding: 10px 0;
+			font-size: 12px;
+			line-height: 1.6em;
 		}
 		@include smartphone {
 			padding: 20px 0;
-		}
-		.copyright {
-			text-align: center;
-			@include desktop {
-				font-family: "Quicksand", "游ゴシック", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-				font-size: 10px;
-				line-height: 1em;
-			}
-			@include smartphone {
-				width: 100%;
-				font-size: 8px;
-			}
 		}
 	}
 }
