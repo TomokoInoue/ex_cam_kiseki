@@ -121,6 +121,9 @@ header {
 	@include desktop {
 		border-bottom: 1px solid #f8f8f8;
 	}
+	@include smartphone {
+		width: 100%;
+	}
 	.header_contentes {
 		@extend %ext_base_block;
 		display: flex;
@@ -129,7 +132,7 @@ header {
 			padding: 1px 0 0;
 		}
 		@include smartphone {
-			padding: percentage(30 / 640) 0;
+			padding: percentage(5 / 640) 0 percentage(7 / 640);
 			background-color: #fff;
 		}
 		.header_logo {
@@ -138,6 +141,15 @@ header {
 			}
 			@include desktop {
 				margin: 0 11px 3px 15px;
+			}
+			@include smartphone {
+				width: percentage(434 / 580);
+				margin-right: percentage(63 / 580);
+				margin-left: percentage(-8 / 580);
+				img {
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 		nav {
@@ -165,6 +177,9 @@ header {
 					}
 				}
 			}
+			@include smartphone {
+				display: none;
+			}
 		}
 		.nav_icon {
 			@include desktop {
@@ -175,9 +190,41 @@ header {
 				margin-left: auto;
 				margin-right: 16px;
 			}
+			@include smartphone {
+				position: relative;
+				width: percentage(90 / 580);
+				margin-top: percentage(19 / 580);
+			}
 			li {
 				a {
 					display: block;
+				}
+				@include smartphone {
+					position: absolute;
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+			@include smartphone {
+				.nav_icon_search {
+					width: percentage(27 / 90);
+					left: percentage(63 / 90);
+					top: percentage(54 / 90);
+				}
+				.nav_icon_info {
+					width: percentage(31 / 90);
+					top: percentage(51 / 90);
+				}
+				.nav_icon_switch {
+					width: percentage(25 / 90);
+					left: percentage(3 / 90);
+				}
+				.nav_icon_hamBtn {
+					width: percentage(25 / 90);
+					left: percentage(64 / 90);
+					top: percentage(4 / 90);
 				}
 			}
 		}
