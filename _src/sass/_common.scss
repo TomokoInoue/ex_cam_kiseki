@@ -291,10 +291,15 @@ header {
  * ------------------- */
 .steps_area {
 	@extend %ext_base_block;
+	@include desktop {
+		margin-bottom: 80px;
+	}
 	h2, p, h3 {
 		margin: 0 auto;
-		font-size: 20px;
 		text-align: center;
+		@include desktop {
+			font-size: 20px;
+		}
 	}
 	.steps_ttl {
 		@include desktop {
@@ -351,8 +356,85 @@ header {
 			}
 		}
 		.tw_list {
-			.list_bolivia {
-				background: url(#{$imgPath}steps_list_bolivia_bg.png) no-repeat 50% 50%;
+			@include clearfix;
+			// リストの共通CSS
+			li {
+				@include desktop {
+					position: relative;
+					float: left;
+					width: 492px;
+					height: 380px;
+					margin-bottom: 40px;
+				}
+				&:nth-child(odd) {
+					margin-right: 40px;
+				}
+				.list_contents {
+					position: absolute;
+					@include desktop {
+						bottom: 11px;
+						left: 50%;
+						width: 470px;
+						height: 124px;
+						margin-left: -235px;
+						background: rgba(0, 0, 0, 0.5);
+					}
+					.list_name {
+						@include desktop {
+							padding: 14px 0 13px;
+						}
+					}
+					.list_tw_btn {
+						a {
+							position: absolute;
+							display: block;
+							@include desktop {
+								bottom: 12px;
+								left: 50%;
+								margin-left: -125px;
+								@include backgroundFig(250px, 42px, "list_tw_btn.png");
+								&:hover {
+									@include backgroundFig(250px, 42px, "list_tw_btn_ov.png");
+								}
+							}
+						}
+					}
+				}
+			}
+			// 各国別のCSS（PC版）
+			@include desktop {
+				// ボリビア
+				.list_bolivia {
+					background: url(#{$imgPath}steps_list_bolivia_bg.png) no-repeat 50% 50%;
+				}
+				// フィンランド
+				.list_finland {
+					background: url(#{$imgPath}steps_list_finland_bg.png) no-repeat 50% 50%;
+				}
+				// フランス
+				.list_france {
+					background: url(#{$imgPath}steps_list_france_bg.png) no-repeat 50% 50%;
+				}
+				// ベネズエラ
+				.list_venezuela {
+					background: url(#{$imgPath}steps_list_venezuela_bg.png) no-repeat 50% 50%;
+				}
+				// スペイン
+				.list_spain {
+					margin-bottom: 10px;
+					background: url(#{$imgPath}steps_list_spain_bg.png) no-repeat 50% 50%;
+				}
+				// 日本
+				.list_japan {
+					margin-bottom: 10px;
+					background: url(#{$imgPath}steps_list_japan_bg.png) no-repeat 50% 50%;
+				}
+			}
+		}
+		.steps_credit {
+			@include desktop {
+				font-size: 11px;
+				text-align: right;
 			}
 		}
 	}
