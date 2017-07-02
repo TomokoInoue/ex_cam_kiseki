@@ -153,10 +153,55 @@ header {
 			}
 		}
 		nav {
+			@include smartphone {
+				position: absolute;
+				top: 0;
+				width: percentage(640 / 580);
+				margin: percentage(128 / 580) 0 0 percentage(-30 / 580);
+				background-color: #f9f9f9;
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+					border-bottom: 4px solid #eee;
+				}
+			}
 			ul {
 				display: flex;
 				justify-content: space-between;
+				@include smartphone {
+					width: percentage(478 / 640);
+					margin-left: percentage(30 / 640);
+					padding-right: percentage(55 / 640);
+					background: url(#{$imgPath}header_nav_btn.png) no-repeat 100% 50%;
+				}
 				li {
+					@include smartphone {
+						position: relative;
+						font-size: 4.06vw;
+						padding: percentage(31 / 640) 0;
+						&:first-child {
+							padding: percentage(31 / 640) percentage(17 / 640);
+							font-weight: bold;
+							&:after {
+								content: "";
+								display: block;
+								position: absolute;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								margin-top: percentage(70 / 640);
+								border-bottom: 4px solid #000;
+								z-index: 2;
+							}
+						}
+						&:nth-last-child(-n+3) {
+							display: none;
+						}
+					}
 					a:link,
 					a:visited,
 					a:hover,
@@ -176,9 +221,6 @@ header {
 						}
 					}
 				}
-			}
-			@include smartphone {
-				display: none;
 			}
 		}
 		.nav_icon {
