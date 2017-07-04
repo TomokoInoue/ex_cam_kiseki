@@ -281,7 +281,11 @@ header {
 	@include desktop {
 		margin-bottom: 50px;
 		background: url(#{$imgPath}mv_bg.png) no-repeat 50% 50%;
-		background-size: cover;
+		background-size: contain;
+	}
+	@include smartphone {
+		background: url(#{$imgPath}mv_bg_sp.png) no-repeat 50% 50%;
+		background-size: contain;
 	}
 	.mv_contents {
 		@extend %ext_base_block;
@@ -291,13 +295,22 @@ header {
 			padding-top: 373px;
 		}
 		@include smartphone {
-			height: 2000px;
-			padding-top: 20px;
+			position: relative;
+			top: 0;
+			padding-top: percentage(613 / 640);
 		}
 		h1 {
 			@include desktop {
 				float: left;
 				margin: 6px 33px 0 4px;
+			}
+			@include smartphone {
+				width: percentage(545 / 580);
+				margin: 0 auto percentage(38 / 640);
+				img {
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 		.mv_copy {
@@ -306,6 +319,14 @@ header {
 				margin-bottom: 8px;
 				@include backgroundFig(506px, 33px, "mv_copy.png");
 			}
+			@include smartphone {
+				position: absolute;
+				top: 0;
+				right: 0;
+				margin-right: percentage(-4 / 580);
+				margin-top: percentage(118 / 580);
+				@include backgroundFigSP(percentage(188 / 580), percentage(306 / 580), "mv_copy_sp.png");
+			}
 		}
 		.mv_date {
 			@include desktop {
@@ -313,12 +334,22 @@ header {
 				margin: 0 0 4px 1px;
 				@include backgroundFig(505px, 103px, "mv_date.png");
 			}
+			@include smartphone {
+				margin-left: percentage(-30 / 580);
+				@include backgroundFigSP(percentage(640 / 580), percentage(130 / 580), "mv_date_sp.png");
+			}
 		}
 		.mv_credit {
-			font-size: 14px;
 			@include desktop {
 				float: right;
 				margin-bottom: 6px;
+				font-size: 14px;
+			}
+			@include smartphone {
+				position: absolute;
+				bottom: percentage(137 / 942);
+				right: 0;
+				font-size: 2.5vw;
 			}
 		}
 	}
