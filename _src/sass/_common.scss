@@ -132,7 +132,7 @@ header {
 			padding: 1px 0 0;
 		}
 		@include smartphone {
-			padding: percentage(5 / 640) 0 percentage(7 / 640);
+			padding: percentage(5 / 640) 0;
 			background-color: #fff;
 		}
 		.header_logo {
@@ -181,9 +181,9 @@ header {
 					@include smartphone {
 						position: relative;
 						font-size: 4.06vw;
-						padding: percentage(31 / 640) 0;
+						padding: percentage(26 / 640) 0 percentage(21 / 640);
 						&:first-child {
-							padding: percentage(31 / 640) percentage(17 / 640);
+							padding: percentage(28 / 640) percentage(17 / 640) percentage(34 / 640) percentage(17 / 640);
 							font-weight: bold;
 							&:after {
 								content: "";
@@ -281,11 +281,12 @@ header {
 	@include desktop {
 		margin-bottom: 50px;
 		background: url(#{$imgPath}mv_bg.png) no-repeat 50% 50%;
-		background-size: contain;
+		background-size: cover;
 	}
 	@include smartphone {
+		margin-bottom: percentage(50 / 640);
 		background: url(#{$imgPath}mv_bg_sp.png) no-repeat 50% 50%;
-		background-size: contain;
+		background-size: cover;
 	}
 	.mv_contents {
 		@extend %ext_base_block;
@@ -306,7 +307,7 @@ header {
 			}
 			@include smartphone {
 				width: percentage(545 / 580);
-				margin: 0 auto percentage(38 / 640);
+				margin: 0 auto percentage(37 / 640);
 				img {
 					width: 100%;
 					height: auto;
@@ -347,7 +348,7 @@ header {
 			}
 			@include smartphone {
 				position: absolute;
-				bottom: percentage(137 / 942);
+				bottom: percentage(140 / 942);
 				right: 0;
 				font-size: 2.5vw;
 			}
