@@ -98,6 +98,7 @@ body {
 	}
 	@include smartphone {
 		min-width: inherit;
+		font-size: $base-font-size_SP;
 		-webkit-text-size-adjust: 100%;
 	}
 }
@@ -364,12 +365,18 @@ header {
 	@extend %ext_base_block;
 	h2, p {
 		margin: 0 auto;
-		text-align: center;
+		@include desktop {
+			text-align: center;
+		}
 	}
 	.about_copy {
 		@include desktop {
 			margin-bottom: 29px;
 			@include backgroundFig(554px, 42px, "about_copy.png");
+		}
+		@include smartphone {
+			margin-bottom: percentage(50 / 580);
+			@include backgroundFigSP(580px, 145px, "about_copy_sp.png");
 		}
 	}
 	.about_ttl {
@@ -377,11 +384,19 @@ header {
 			margin-bottom: 30px;
 			@include backgroundFig(783px, 56px, "about_ttl.png");
 		}
+		@include smartphone {
+			margin-bottom: percentage(41 / 580);
+			@include backgroundFigSP(581px, 42px, "about_ttl_sp.png");
+		}
 	}
 	.about_date {
 		@include desktop {
 			margin-bottom: 33px;
 			@include backgroundFig(449px, 22px, "about_date.png");
+		}
+		@include smartphone {
+			margin-bottom: percentage(45 / 580);
+			@include backgroundFigSP(513px, 25px, "about_date.png");
 		}
 	}
 	.about_desc {
@@ -390,13 +405,30 @@ header {
 			font-size: 18px;
 			line-height: 1.77em;
 		}
+		@include smartphone {
+			margin-bottom: percentage(42 / 580);
+			line-height: 1.58em;
+		}
 	}
 	.about_present {
+		display: flex;
+		justify-content: space-between;
 		@include desktop {
-			display: flex;
-			justify-content: space-between;
 			width: 706px;
 			margin: 0 auto 92px;
+		}
+		@include smartphone {
+			margin-bottom: percentage(97 / 580);
+		}
+		li {
+			@include smartphone {
+				width: percentage(272 / 580);
+				height: percentage(272 / 580);
+				p > img {
+					width: 100%;
+					height: auto;
+				}
+			}
 		}
 		.present_best {
 			@include desktop {
@@ -417,9 +449,9 @@ header {
 	}
 	h2, p, h3 {
 		margin: 0 auto;
-		text-align: center;
 		@include desktop {
 			font-size: 20px;
+			text-align: center;
 		}
 	}
 	.steps_ttl {
@@ -427,11 +459,19 @@ header {
 			margin-bottom: 34px;
 			@include backgroundFig(278px, 66px, "steps_ttl.png");
 		}
+		@include smartphone {
+			margin-bottom: percentage(30 / 580);
+			@include backgroundFigSP(337px, 80px, "steps_ttl_sp.png");
+		}
 	}
 	// 共通CSS
 	.steps_desc {
 		@include desktop {
 			margin-bottom: 31px;
+		}
+		@include smartphone {
+			margin-bottom: percentage(25 / 580);
+			line-height: 1.58em;
 		}
 	}
 	// STEP1のCSS
@@ -439,10 +479,17 @@ header {
 		@include desktop {
 			padding-bottom: 49px;
 		}
+		@include smartphone {
+			margin-bottom: percentage(49 / 580);
+		}
 		.step1_sub_ttl {
 			@include desktop {
 				margin-bottom: 14px;
 				@include backgroundFig(161px, 28px, "step1_sub_ttl.png");
+			}
+			@include smartphone {
+				margin-bottom: percentage(15 / 580);
+				@include backgroundFigSP(180px, 28px, "step1_sub_ttl_sp.png");
 			}
 		}
 		.steps_follow_btn > a {
@@ -455,6 +502,12 @@ header {
 				background: url(#{$imgPath}steps_follow_btn_icon.png) no-repeat 121px 50% #00aced;
 				background-size: 32px 26px;
 				font-size: 18px;
+			}
+			@include smartphone {
+				width: percentage(304 / 580);
+				padding: percentage(24 / 580) 0 percentage(24 / 580) percentage(146 / 580);
+				background: url(#{$imgPath}steps_follow_btn_icon.png) no-repeat percentage(98 / 450) 50% #00aced;
+				font-size: 4.375vw;
 			}
 		}
 		.steps_follow_btn > a:hover {
