@@ -533,7 +533,7 @@ header {
 			}
 			@include smartphone {
 				margin-bottom: percentage(15 / 580);
-				@include backgroundFigSP(180px, 28px, "step2_sub_ttl_sp.png");
+				@include backgroundFigSP(percentage(180 / 580), percentage(28 / 580), "step2_sub_ttl_sp.png");
 			}
 		}
 		.step2_desc {
@@ -818,9 +818,11 @@ header {
 		a {
 			display: block;
 			&:hover {
-				position: absolute;
-				left: 0;
-				top: -80px;
+				@include desktop {
+					position: absolute;
+					left: 0;
+					top: -80px;
+				}
 			}
 		}
 	}
@@ -830,7 +832,7 @@ header {
 			background-position: left top;
 		}
 		@include smartphone {
-			@include backgroundFigSP(percentage(88 / 100), percentage(88 / 100), "footer_sns_fb_sp.png");
+			@include backgroundFigSP(percentage(88 / 88), percentage(88 / 88), "footer_sns_fb_sp.png");
 		}
 	}
 	.footer_sns_tw > a {
@@ -839,7 +841,7 @@ header {
 			background-position: left top;
 		}
 		@include smartphone {
-			@include backgroundFigSP(percentage(88 / 100), percentage(88 / 100), "footer_sns_tw_sp.png");
+			@include backgroundFigSP(percentage(88 / 88), percentage(88 / 88), "footer_sns_tw_sp.png");
 		}
 	}
 }
