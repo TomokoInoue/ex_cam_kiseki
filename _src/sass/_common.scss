@@ -448,7 +448,7 @@ header {
 		margin-bottom: 81px;
 	}
 	@include smartphone {
-		margin-bottom: percentage(80 / 580);
+		margin-bottom: percentage(72 / 580);
 	}
 	h2, p, h3 {
 		margin: 0 auto;
@@ -716,11 +716,18 @@ header {
 	@include desktop {
 		margin-bottom: 70px;
 	}
+	@include smartphone {
+		margin-bottom: percentage(90 / 580);
+	}
 	.guideline_ttl {
 		margin: 0 auto;
 		@include desktop {
 			margin-bottom: 31px;
 			@include backgroundFig(278px, 66px, "guideline_ttl.png");
+		}
+		@include smartphone {
+			margin-bottom: percentage(54 / 580);
+			@include backgroundFigSP(percentage(337 / 580), percentage(80 / 580), "guideline_ttl_sp.png");
 		}
 	}
 	.guideline_contents {
@@ -728,6 +735,9 @@ header {
 			height: 652px;
 			padding: 30px 0;
 			border: 1px solid #828491;
+		}
+		@include smartphone {
+			line-height: 1.58em;
 		}
 		.guideline_inner {
 			@include desktop {
@@ -743,6 +753,9 @@ header {
 		.present_desc {
 			@include desktop {
 				margin-bottom: 24px;
+			}
+			@include smartphone {
+				margin-bottom: percentage(40 / 580);
 			}
 		}
 		.howto_list > li,
