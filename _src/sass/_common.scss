@@ -376,7 +376,7 @@ header {
 		}
 		@include smartphone {
 			margin-bottom: percentage(50 / 580);
-			@include backgroundFigSP(580px, 145px, "about_copy_sp.png");
+			@include backgroundFigSP(percentage(580 / 580), percentage(145 / 580), "about_copy_sp.png");
 		}
 	}
 	.about_ttl {
@@ -386,7 +386,7 @@ header {
 		}
 		@include smartphone {
 			margin-bottom: percentage(41 / 580);
-			@include backgroundFigSP(581px, 42px, "about_ttl_sp.png");
+			@include backgroundFigSP(percentage(581 / 580), percentage(42 / 580), "about_ttl_sp.png");
 		}
 	}
 	.about_date {
@@ -396,7 +396,7 @@ header {
 		}
 		@include smartphone {
 			margin-bottom: percentage(45 / 580);
-			@include backgroundFigSP(513px, 25px, "about_date.png");
+			@include backgroundFigSP(percentage(513 / 580), percentage(25 / 580), "about_date.png");
 		}
 	}
 	.about_desc {
@@ -464,7 +464,7 @@ header {
 		}
 		@include smartphone {
 			margin-bottom: percentage(30 / 580);
-			@include backgroundFigSP(337px, 80px, "steps_ttl_sp.png");
+			@include backgroundFigSP(percentage(337 / 580), percentage(80 / 580), "steps_ttl_sp.png");
 		}
 	}
 	// 共通CSS
@@ -492,7 +492,7 @@ header {
 			}
 			@include smartphone {
 				margin-bottom: percentage(15 / 580);
-				@include backgroundFigSP(180px, 28px, "step1_sub_ttl_sp.png");
+				@include backgroundFigSP(percentage(180 / 580), percentage(28 / 580), "step1_sub_ttl_sp.png");
 			}
 		}
 		.steps_follow_btn > a {
@@ -647,6 +647,7 @@ header {
 				// ボリビア
 				.list_bolivia {
 					background: url(#{$imgPath}steps_list_bolivia_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(346 / 554);
 					}
@@ -654,6 +655,7 @@ header {
 				// フィンランド
 				.list_finland {
 					background: url(#{$imgPath}steps_list_finland_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(423 / 554);
 					}
@@ -661,6 +663,7 @@ header {
 				// フランス
 				.list_france {
 					background: url(#{$imgPath}steps_list_france_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(335 / 554);
 					}
@@ -668,6 +671,7 @@ header {
 				// ベネズエラ
 				.list_venezuela {
 					background: url(#{$imgPath}steps_list_venezuela_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(463 / 554);
 					}
@@ -675,14 +679,16 @@ header {
 				// スペイン
 				.list_spain {
 					background: url(#{$imgPath}steps_list_spain_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(345 / 554);
 					}
 				}
 				// 日本
 				.list_japan {
-					background: url(#{$imgPath}steps_list_japan_bg_sp.png) no-repeat 50% 50%;
 					margin-bottom: percentage(20 / 580);
+					background: url(#{$imgPath}steps_list_japan_bg_sp.png) no-repeat 50% 50%;
+					background-size: contain;
 					.list_name {
 						width: percentage(303 / 554);
 					}
