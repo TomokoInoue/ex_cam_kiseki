@@ -447,6 +447,9 @@ header {
 	@include desktop {
 		margin-bottom: 81px;
 	}
+	@include smartphone {
+		margin-bottom: percentage(80 / 580);
+	}
 	h2, p, h3 {
 		margin: 0 auto;
 		@include desktop {
@@ -528,34 +531,62 @@ header {
 				margin-bottom: 16px;
 				@include backgroundFig(161px, 28px, "step2_sub_ttl.png");
 			}
+			@include smartphone {
+				margin-bottom: percentage(15 / 580);
+				@include backgroundFigSP(180px, 28px, "step2_sub_ttl_sp.png");
+			}
+		}
+		.step2_desc {
+			@include smartphone {
+				text-align: center;
+			}
 		}
 		.tw_list {
 			@include clearfix;
 			// リストの共通CSS
 			li {
+				position: relative;
 				@include desktop {
-					position: relative;
 					float: left;
 					width: 492px;
 					height: 380px;
 					margin-bottom: 40px;
 				}
+				@include smartphone {
+					width: 100%;
+					padding-top: percentage(580 / 580);
+					margin-bottom: percentage(30 / 580);
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
 				&:nth-child(odd) {
-					margin-right: 40px;
+					@include desktop {
+						margin-right: 40px;
+					}
 				}
 				.list_contents {
 					position: absolute;
+					left: 50%;
+					background: rgba(0, 0, 0, 0.5);
 					@include desktop {
 						bottom: 11px;
-						left: 50%;
 						width: 470px;
 						height: 124px;
 						margin-left: -235px;
-						background: rgba(0, 0, 0, 0.5);
+					}
+					@include smartphone {
+						bottom: percentage(13 / 580);
+						width: percentage(554 / 580);
+						margin-left: percentage(-277 / 580);
 					}
 					.list_name {
 						@include desktop {
 							padding: 14px 0 13px;
+						}
+						@include smartphone {
+							padding: percentage(24 / 554) 0 percentage(136 / 554);
 						}
 					}
 					.list_tw_btn {
@@ -570,6 +601,13 @@ header {
 								&:hover {
 									@include backgroundFig(250px, 42px, "list_tw_btn_ov.png");
 								}
+							}
+							@include smartphone {
+								bottom: 0;
+								left: 50%;
+								margin-left: percentage(-150 / 554);
+								margin-bottom: percentage(30 / 554);
+								@include backgroundFigSP(percentage(300 / 554), percentage(80 / 554), "list_tw_btn_sp.png");
 							}
 						}
 					}
@@ -595,20 +633,69 @@ header {
 				}
 				// スペイン
 				.list_spain {
-					margin-bottom: 10px;
 					background: url(#{$imgPath}steps_list_spain_bg.png) no-repeat 50% 50%;
+					margin-bottom: 10px;
 				}
 				// 日本
 				.list_japan {
-					margin-bottom: 10px;
 					background: url(#{$imgPath}steps_list_japan_bg.png) no-repeat 50% 50%;
+					margin-bottom: 10px;
+				}
+			}
+			// 各国別のCSS（SP版）
+			@include smartphone {
+				// ボリビア
+				.list_bolivia {
+					background: url(#{$imgPath}steps_list_bolivia_bg_sp.png) no-repeat 50% 50%;
+					.list_name {
+						width: percentage(346 / 554);
+					}
+				}
+				// フィンランド
+				.list_finland {
+					background: url(#{$imgPath}steps_list_finland_bg_sp.png) no-repeat 50% 50%;
+					.list_name {
+						width: percentage(423 / 554);
+					}
+				}
+				// フランス
+				.list_france {
+					background: url(#{$imgPath}steps_list_france_bg_sp.png) no-repeat 50% 50%;
+					.list_name {
+						width: percentage(335 / 554);
+					}
+				}
+				// ベネズエラ
+				.list_venezuela {
+					background: url(#{$imgPath}steps_list_venezuela_bg_sp.png) no-repeat 50% 50%;
+					.list_name {
+						width: percentage(463 / 554);
+					}
+				}
+				// スペイン
+				.list_spain {
+					background: url(#{$imgPath}steps_list_spain_bg_sp.png) no-repeat 50% 50%;
+					.list_name {
+						width: percentage(345 / 554);
+					}
+				}
+				// 日本
+				.list_japan {
+					background: url(#{$imgPath}steps_list_japan_bg_sp.png) no-repeat 50% 50%;
+					margin-bottom: percentage(20 / 580);
+					.list_name {
+						width: percentage(303 / 554);
+					}
 				}
 			}
 		}
 		.steps_credit {
+			text-align: right;
 			@include desktop {
 				font-size: 11px;
-				text-align: right;
+			}
+			@include smartphone {
+				font-size: 2.18vw;
 			}
 		}
 	}
