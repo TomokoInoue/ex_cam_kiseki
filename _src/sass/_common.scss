@@ -830,7 +830,7 @@ header {
 			background-position: left top;
 		}
 		@include smartphone {
-			@include backgroundFigSP(88px, 88px, "footer_sns_fb_sp.png");
+			@include backgroundFigSP(percentage(88 / 100), percentage(88 / 100), "footer_sns_fb_sp.png");
 		}
 	}
 	.footer_sns_tw > a {
@@ -839,7 +839,7 @@ header {
 			background-position: left top;
 		}
 		@include smartphone {
-			@include backgroundFigSP(88px, 88px, "footer_sns_tw_sp.png");
+			@include backgroundFigSP(percentage(88 / 100), percentage(88 / 100), "footer_sns_tw_sp.png");
 		}
 	}
 }
