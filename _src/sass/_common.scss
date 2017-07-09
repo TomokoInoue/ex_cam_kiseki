@@ -772,13 +772,17 @@ header {
  * ------------------- */
 .detail_btn {
 	a {
-		margin: 0 auto 60px;
 		@include desktop {
+			margin: 0 auto 60px;
 			@include backgroundFig(620px, 66px, "detail_btn.png");
 			background-position: 0 0;
 			&:hover {
 				background-position: 0 -66px;
 			}
+		}
+		@include smartphone {
+			margin: 0 auto percentage(80 / 640);
+			@include backgroundFigSP(percentage(580 / 630), percentage(139 / 580), "detail_btn_sp.png");
 		}
 	}
 }
@@ -795,21 +799,48 @@ header {
 		width: 200px;
 		margin-bottom: 70px;
 	}
+	@include smartphone {
+		width: percentage(228 / 640);
+		margin-bottom: percentage(100 / 640);
+	}
 	li {
-	    @include desktop {
-			position: relative;
+		display: block;
+		position: relative;
+		overflow: hidden;
+		@include desktop {
 			width: 80px;
 			height: 80px;
-	        overflow: hidden;
-	    }
-	    img:hover {
-	        @include desktop {
-	            display: block;
-	            position: absolute;
-	            top: -80px;
-	            left: 0;
-	        }
-	    }
+		}
+		@include smartphone {
+			width: percentage(88 / 228);
+			height: percentage(88 / 228);
+		}
+		a {
+			display: block;
+			&:hover {
+				position: absolute;
+				left: 0;
+				top: -80px;
+			}
+		}
+	}
+	.footer_sns_fb > a {
+		@include desktop {
+			@include backgroundFig(80px, 160px, "footer_sns_fb.png");
+			background-position: left top;
+		}
+		@include smartphone {
+			@include backgroundFigSP(88px, 88px, "footer_sns_fb_sp.png");
+		}
+	}
+	.footer_sns_tw > a {
+		@include desktop {
+			@include backgroundFig(80px, 160px, "footer_sns_tw.png");
+			background-position: left top;
+		}
+		@include smartphone {
+			@include backgroundFigSP(88px, 88px, "footer_sns_tw_sp.png");
+		}
 	}
 }
 
@@ -821,7 +852,7 @@ footer {
 	background-color: #fff;
 	.footer_contens {
 		@extend %ext_base_block;
-		color: #000;
+		color: #666666;
 		text-align: center;
 		@include desktop {
 			margin: 0 auto;
@@ -830,7 +861,9 @@ footer {
 			line-height: 1.6em;
 		}
 		@include smartphone {
-			padding: 20px 0;
+			padding: percentage(30 / 640) 0;
+			font-size: 2.81vw;
+			line-height: 1.6em;
 		}
 	}
 }
